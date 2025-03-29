@@ -10,12 +10,9 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "format:all": "npx prettier --write -u .",
-    "format:staged": "prettier --write -u $(git diff --staged --name-only --diff-filter d | xargs)"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint && npm run test && npm run format:staged"
-    }
+    "format:staged": "prettier --write -u $(git diff --staged --name-only --diff-filter d | xargs)",
+    "format:staged:check": "prettier -c -u $(git diff --staged --name-only --diff-filter d | xargs)",
+    "prepare": "husky"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
